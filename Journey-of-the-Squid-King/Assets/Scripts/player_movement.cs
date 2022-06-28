@@ -10,7 +10,7 @@ public class player_movement : MonoBehaviour
     Vector3 playerVelocity = new Vector3();
 
     float playerJumpCharge = 0.3f;
-    public float playerAirControl = 0.5f;
+    float playerAirControl = 2.0f;
 
     bool isOnPlatform = false;
 
