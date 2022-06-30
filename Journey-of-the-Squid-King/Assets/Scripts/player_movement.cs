@@ -62,7 +62,7 @@ public class player_movement : MonoBehaviour
 
         if (isOnPlatform) // Jump handling - while on a platform
         {
-            playerVelocity *= (playerJumpCharge * 10);
+            playerVelocity *= (playerJumpCharge * 15);
             rigidBody.AddForce(playerVelocity, ForceMode2D.Impulse);
         }
         else // Air control - while not on a platform
@@ -78,11 +78,16 @@ public class player_movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform") isOnPlatform = true;
+        if (collision.gameObject.tag == "Platform")
+        {
+            isOnPlatform = true;
+            rigidBody.drag = 5.0f;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         isOnPlatform = false;
+        rigidBody.drag = 0.5f;
     }
 }
