@@ -14,6 +14,8 @@ public class player_movement : MonoBehaviour
 
     bool isOnPlatform = false;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +29,12 @@ public class player_movement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && playerJumpCharge < 1.0f && isOnPlatform) // W held increases jump power (While on a platform)
         {
             playerJumpCharge += Time.deltaTime;
+            animator.SetBool("Charging", true);
         }
         else if (!Input.GetKey(KeyCode.W) && playerJumpCharge > 0.3f) // W not held decreases jump power twice as fast
         {
             playerJumpCharge -= Time.deltaTime * 2;
+            animator.SetBool("Charging", false);
         }
 
         // Jump Controls - On a platform
