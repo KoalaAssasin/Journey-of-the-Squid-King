@@ -66,7 +66,7 @@ public class player_movement : MonoBehaviour
 
         if (isOnPlatform) // Jump handling - while on a platform
         {
-            playerVelocity *= (playerJumpCharge * 15);
+            playerVelocity *= (playerJumpCharge * 16);
             rigidBody.AddForce(playerVelocity, ForceMode2D.Impulse);
         }
         else // Air control - while not on a platform
@@ -78,6 +78,12 @@ public class player_movement : MonoBehaviour
 
         if (!isOnPlatform) playerJumpCharge = 0.3f;
         playerJump = Vector2.zero;
+
+        // If they player is at the bottom of the screen, moves them up to a higher position on the same X
+        if (transform.position.y < -7.9f)
+        {
+            transform.position = new Vector2(transform.position.x, 0.0f);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

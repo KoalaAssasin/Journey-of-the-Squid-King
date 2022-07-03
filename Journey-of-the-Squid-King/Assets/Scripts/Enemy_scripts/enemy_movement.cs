@@ -25,11 +25,14 @@ public class enemy_movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // If hit by a bullet, remove 1 HP
         if (collision.gameObject.tag == "Bullet")
         {
             health -= 1;
+            // If HP hits 0, add 1 to score and destroy this enemy
             if (health == 0)
             {
+                FindObjectOfType<score_manager>().currentScore += 1;
                 Destroy(this.gameObject);
             }
         }

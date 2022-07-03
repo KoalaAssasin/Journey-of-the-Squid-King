@@ -6,7 +6,7 @@ public class enemy_spawning : MonoBehaviour
 {
     public GameObject Enemy;
     float spawnTimer = 0.0f;
-    public float spawnDelay = 5.0f;
+    float spawnDelay = 9.0f;
 
     void Update()
     {
@@ -14,7 +14,7 @@ public class enemy_spawning : MonoBehaviour
         {
             Instantiate(Enemy, transform.position, transform.rotation);
             spawnTimer = 0.0f;
-            spawnDelay -= 0.1f;
+            //spawnDelay -= 0.1f;
         }
 
         spawnTimer += Time.deltaTime;

@@ -21,4 +21,16 @@ public class platform_jump_through : MonoBehaviour
             platform.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            
+        }
+        else if (collision.gameObject.tag != "Player")
+        {
+            platform.GetComponent<BoxCollider2D>().enabled = true;
+        }
+    }
 }
