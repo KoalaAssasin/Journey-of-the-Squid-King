@@ -41,14 +41,17 @@ public class player_movement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W) && (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)) && isOnPlatform) // Up - W
         {
             playerJump = new Vector2(0, 1);
+            this.transform.parent = null;
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && isOnPlatform) // Left - W + A
         {
             playerJump = new Vector2(-0.2f, 1);
+            this.transform.parent = null;
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && isOnPlatform) // Right - W + D
         {
             playerJump = new Vector2(0.2f, 1);
+            this.transform.parent = null;
         }
 
         // In air controls - Not on a platform
@@ -92,6 +95,7 @@ public class player_movement : MonoBehaviour
         {
             isOnPlatform = true;
             rigidBody.drag = 5.0f;
+            this.transform.SetParent(collision.transform);
         }
     }
 

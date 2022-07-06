@@ -9,7 +9,7 @@ public class waypoint : MonoBehaviour
     //private float timer = 0.5f;
 
     Vector3 waypointToPlayer = new Vector3();
-    float waypointSpeed = 0.5f;
+    float waypointSpeed = 2.0f;
 
     void Update()
     {
@@ -24,8 +24,11 @@ public class waypoint : MonoBehaviour
         //    timer = 0.5f;
         //}
 
-        waypointToPlayer = transform.position - wayPoint.transform.position;
-        wayPoint.transform.position += waypointToPlayer * waypointSpeed * Time.deltaTime;
+        //waypointToPlayer = transform.position - wayPoint.transform.position;
+        //waypointToPlayer.Normalize();
+        //wayPoint.transform.position += waypointToPlayer * waypointSpeed * Time.deltaTime;
+
+        wayPoint.transform.position = transform.position;
     }
 
     //void UpdatePosition()
