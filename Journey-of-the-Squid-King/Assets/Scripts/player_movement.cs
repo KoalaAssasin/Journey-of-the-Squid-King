@@ -42,16 +42,19 @@ public class player_movement : MonoBehaviour
         {
             playerJump = new Vector2(0, 1);
             this.transform.parent = null;
+            animator.SetBool("Jumping", true);
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && isOnPlatform) // Left - W + A
         {
             playerJump = new Vector2(-0.2f, 1);
             this.transform.parent = null;
+            animator.SetBool("Jumping", true);
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && isOnPlatform) // Right - W + D
         {
             playerJump = new Vector2(0.2f, 1);
             this.transform.parent = null;
+            animator.SetBool("Jumping", true);
         }
 
         // In air controls - Not on a platform
@@ -87,6 +90,14 @@ public class player_movement : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x, 0.0f);
         }
+
+        //Animation falling tester
+        if(rigidBody.velocity.y < 0)
+        {
+            animator.SetBool("Jumping", false);
+            animator.SetBool("Falling", true);
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -96,6 +107,7 @@ public class player_movement : MonoBehaviour
             isOnPlatform = true;
             rigidBody.drag = 5.0f;
             this.transform.SetParent(collision.transform);
+            animator.SetBool("Falling", false);
         }
     }
 
