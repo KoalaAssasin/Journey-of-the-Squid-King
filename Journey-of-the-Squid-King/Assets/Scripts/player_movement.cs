@@ -105,7 +105,7 @@ public class player_movement : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             isOnPlatform = true;
-            rigidBody.drag = 5.0f;
+            //rigidBody.drag = 5.0f;
             this.transform.SetParent(collision.transform);
             animator.SetBool("Falling", false);
         }
@@ -114,6 +114,6 @@ public class player_movement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isOnPlatform = false;
-        rigidBody.drag = 0.5f;
+        //rigidBody.drag = 0.5f;
     }
 }
