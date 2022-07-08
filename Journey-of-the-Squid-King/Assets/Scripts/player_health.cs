@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player_health : MonoBehaviour
 {
     public int playerHP = 3;
     float baseInvulTimer = 2.1f;
     float invulTimer = 0;
+
+    public Text healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,8 @@ public class player_health : MonoBehaviour
             invulTimer = baseInvulTimer;
             GetComponent<SpriteRenderer>().color = Color.green;
             --playerHP;
+
+            healthText.text = playerHP.ToString();
         }
     }
 }
