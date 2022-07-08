@@ -92,7 +92,7 @@ public class player_movement : MonoBehaviour
         }
 
         //Animation falling tester
-        if(rigidBody.velocity.y < 0)
+        if (rigidBody.velocity.y < 0)
         {
             animator.SetBool("Jumping", false);
             animator.SetBool("Falling", true);

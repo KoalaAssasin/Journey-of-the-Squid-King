@@ -8,8 +8,8 @@ public class waypoint : MonoBehaviour
     //This is how often your waypoint's position will update to the player's position
     //private float timer = 0.5f;
 
-    Vector3 waypointToPlayer = new Vector3();
-    float waypointSpeed = 2.0f;
+    //Vector3 waypointToPlayer = new Vector3();
+    //float waypointSpeed = 2.0f;
 
     void Update()
     {
