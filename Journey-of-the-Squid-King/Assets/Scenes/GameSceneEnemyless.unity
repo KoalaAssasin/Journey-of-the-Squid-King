@@ -452,7 +452,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name
@@ -1331,7 +1331,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name
@@ -1475,7 +1475,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name
@@ -2934,7 +2934,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name
@@ -2995,7 +2995,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name
@@ -3139,7 +3139,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name
@@ -4110,7 +4110,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name
@@ -5331,7 +5331,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987428787612231766, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: platformSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 987428787612231767, guid: 3f70a43bbf209664d9814bef74d96b30, type: 3}
       propertyPath: m_Name

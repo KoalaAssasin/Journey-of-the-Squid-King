@@ -8,11 +8,13 @@ public class player_movement : MonoBehaviour
 
     Vector2 playerJump = new Vector2();
     Vector3 playerVelocity = new Vector3();
+    Vector3 playerDown = new Vector3(0, -1);
 
     float playerJumpCharge = 0.3f;
     float playerAirControl = 2.0f;
 
-    bool isOnPlatform = false;
+    public bool isOnPlatform = false;
+    public bool groundSlamActive = false;
 
     public Animator animator;
 
@@ -67,13 +69,26 @@ public class player_movement : MonoBehaviour
             playerJump = new Vector2(1.0f, 0);
         }
 
+        // Ground Pound/ Slam thing - S pressed while in the air, only allowed once per airborne
+        // First impulse stops vertical velocity, second impulse blasts downwards
+        if (Input.GetKey(KeyCode.S) && !isOnPlatform && !groundSlamActive)
+        {
+            playerVelocity = rigidBody.velocity * playerDown;
+            rigidBody.AddForce(playerVelocity, ForceMode2D.Impulse);
+
+            playerVelocity = 10 * playerDown;
+            rigidBody.AddForce(playerVelocity, ForceMode2D.Impulse);
+            groundSlamActive = true;
+        }
+
         playerVelocity = playerJump;
         playerVelocity.Normalize();
 
         if (isOnPlatform) // Jump handling - while on a platform
         {
-            playerVelocity *= (playerJumpCharge * 16);
+            playerVelocity *= (16 * playerJumpCharge);
             rigidBody.AddForce(playerVelocity, ForceMode2D.Impulse);
+            groundSlamActive = false;
         }
         else // Air control - while not on a platform
         {
@@ -86,7 +101,7 @@ public class player_movement : MonoBehaviour
         playerJump = Vector2.zero;
 
         // If they player is at the bottom of the screen, moves them up to a higher position on the same X
-        if (transform.position.y < -7.9f)
+        if (transform.position.y < -8.0f)
         {
             transform.position = new Vector2(transform.position.x, 0.0f);
         }
