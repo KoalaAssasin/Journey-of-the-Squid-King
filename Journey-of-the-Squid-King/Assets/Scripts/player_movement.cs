@@ -11,7 +11,7 @@ public class player_movement : MonoBehaviour
     Vector3 playerDown = new Vector3(0, -1);
 
     float playerJumpCharge = 0.3f;
-    float playerAirControl = 2.0f;
+    float playerAirControl = 1.5f;
 
     public bool isOnPlatform = false;
     public bool groundSlamActive = false;
