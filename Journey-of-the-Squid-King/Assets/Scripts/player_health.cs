@@ -46,7 +46,9 @@ public class player_health : MonoBehaviour
             --playerHP;
 
             healthText.text = playerHP.ToString();
-            cameraShake.Shake(0.5f, 10); // Doesn't work
+            //shake camera at duration of .15 and magnitude of .4
+            //make sure to start the couroutine
+            StartCoroutine(cameraShake.Shake(.30f, .8f));
         }
         if (collision.gameObject.tag == "BottomWall" && invulTimer < 0)
         {
@@ -55,7 +57,7 @@ public class player_health : MonoBehaviour
             --playerHP;
 
             healthText.text = playerHP.ToString();
-            cameraShake.Shake(0.5f, 10); // Doesn't work 
+            StartCoroutine(cameraShake.Shake(.30f, .8f));
         }
     }
 }
