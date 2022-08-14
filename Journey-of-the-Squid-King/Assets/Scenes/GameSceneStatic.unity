@@ -588,6 +588,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159581528558710401, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1818362280}
     - target: {fileID: 159581528558710422, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3101,7 +3105,7 @@ GameObject:
   - component: {fileID: 1199540694}
   m_Layer: 0
   m_Name: Wall - Bottom
-  m_TagString: Wall
+  m_TagString: BottomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3204,7 +3204,7 @@ GameObject:
   - component: {fileID: 1199540694}
   m_Layer: 0
   m_Name: Wall - Bottom
-  m_TagString: Wall
+  m_TagString: BottomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4335,6 +4335,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 159581528558710401, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1632116127}
+    - target: {fileID: 159581528558710401, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+      propertyPath: invulTimer
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 159581528558710422, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4345,11 +4353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 159581528558710426, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8401584
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 159581528558710426, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.043456472
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 159581528558710426, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: m_LocalPosition.z

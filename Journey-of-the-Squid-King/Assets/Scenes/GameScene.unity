@@ -888,6 +888,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 159581528558710422, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
   m_PrefabInstance: {fileID: 159581528811209137}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &247053344 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 159581528558710430, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+  m_PrefabInstance: {fileID: 159581528811209137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &273431110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2277,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &902365509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902365511}
+  - component: {fileID: 902365510}
+  m_Layer: 0
+  m_Name: CameraParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &902365510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902365509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad8d53fff7454c41a7941e3b4c0e12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &902365511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902365509}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1225859196}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &904786074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,7 +2965,7 @@ GameObject:
   - component: {fileID: 1199540694}
   m_Layer: 0
   m_Name: Wall - Bottom
-  m_TagString: Wall
+  m_TagString: BottomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3173,11 +3222,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225859193}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 902365511}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230881525
@@ -5325,9 +5374,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 159581528558710401, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 247053344}
+    - target: {fileID: 159581528558710401, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1230881527}
+    - target: {fileID: 159581528558710401, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 902365510}
+    - target: {fileID: 159581528558710401, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+      propertyPath: cameraEffects
+      value: 
+      objectReference: {fileID: 1225859193}
     - target: {fileID: 159581528558710422, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: m_Name
       value: Player

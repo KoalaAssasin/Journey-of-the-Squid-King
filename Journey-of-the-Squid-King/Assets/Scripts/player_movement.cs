@@ -97,13 +97,17 @@ public class player_movement : MonoBehaviour
         }
 
 
-        if (!isOnPlatform) playerJumpCharge = 0.3f;
+        if (!isOnPlatform)
+        {
+            playerJumpCharge = 0.3f; 
+            
+        }
         playerJump = Vector2.zero;
 
         // If they player is at the bottom of the screen, moves them up to a higher position on the same X
-        if (transform.position.y < -8.0f)
+        if (transform.position.y < -7.9f)
         {
-            transform.position = new Vector2(transform.position.x, 0.0f);
+            // nothing
         }
 
         //Animation falling tester
@@ -124,11 +128,20 @@ public class player_movement : MonoBehaviour
             this.transform.SetParent(collision.transform);
             animator.SetBool("Falling", false);
         }
+        if (collision.gameObject.tag == "BottomWall")
+        {
+            transform.position = new Vector2(transform.position.x, 0.0f);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        isOnPlatform = false;
+        
+        if (collision.gameObject.tag == "Platform")
+        {
+            isOnPlatform = false;
+            this.transform.parent = null;
+        }
         //rigidBody.drag = 0.5f;
     }
 }
