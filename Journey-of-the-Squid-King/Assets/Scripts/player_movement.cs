@@ -17,6 +17,7 @@ public class player_movement : MonoBehaviour
     public bool groundSlamActive = false;
 
     public Animator animator;
+    public ParticleSystem particleLand;
 
     // Start is called before the first frame update
     void Start()
@@ -127,10 +128,12 @@ public class player_movement : MonoBehaviour
             //rigidBody.drag = 5.0f;
             this.transform.SetParent(collision.transform);
             animator.SetBool("Falling", false);
+            Landing();
         }
         if (collision.gameObject.tag == "BottomWall")
         {
             transform.position = new Vector2(transform.position.x, 0.0f);
+            Landing();
         }
     }
 
@@ -143,5 +146,10 @@ public class player_movement : MonoBehaviour
             this.transform.parent = null;
         }
         //rigidBody.drag = 0.5f;
+    }
+
+    public void Landing()
+    {
+        particleLand.Play();
     }
 }

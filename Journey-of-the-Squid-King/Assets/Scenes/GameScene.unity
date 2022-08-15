@@ -901,6 +901,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 159581528558710430, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
   m_PrefabInstance: {fileID: 159581528811209137}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &247053352 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 159581528558710426, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+  m_PrefabInstance: {fileID: 159581528811209137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &273431110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +1969,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &706906789
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 247053352}
+    m_Modifications:
+    - target: {fileID: 5213648886332093242, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_Name
+      value: Land
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.603
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
 --- !u!1 &803701799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,6 +4229,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1626455393 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+  m_PrefabInstance: {fileID: 706906789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1678115440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5494,6 +5561,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 159581528558710428, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
+      propertyPath: particleLand
+      value: 
+      objectReference: {fileID: 1626455393}
     - target: {fileID: 159581528558710429, guid: e1de40d99827efa49975030b55c8ed82, type: 3}
       propertyPath: crosshair
       value: 
