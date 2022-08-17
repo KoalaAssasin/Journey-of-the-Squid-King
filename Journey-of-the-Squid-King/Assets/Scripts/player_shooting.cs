@@ -12,6 +12,8 @@ public class player_shooting : MonoBehaviour
     float fireRate = 0.47f; // was previously 0.5f
     float shootTimer = 0;
 
+    public ParticleSystem particleShoot;
+
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +24,9 @@ public class player_shooting : MonoBehaviour
         if (shootTimer > fireRate)
         {
             Instantiate(bullet, transform.position, transform.rotation);
+            // Insert some way to shoot particles in the direction of vectortoCrosshair
+            particleShoot.transform.rotation = Quaternion.Euler(vectorToCrosshair.x, vectorToCrosshair.y, vectorToCrosshair.z - 90);
+            particleShoot.Play();
             shootTimer = 0.0f;
         }
     }

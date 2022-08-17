@@ -46,18 +46,21 @@ public class player_movement : MonoBehaviour
             playerJump = new Vector2(0, 1);
             this.transform.parent = null;
             animator.SetBool("Jumping", true);
+            Landing();
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && isOnPlatform) // Left - W + A
         {
             playerJump = new Vector2(-0.2f, 1);
             this.transform.parent = null;
             animator.SetBool("Jumping", true);
+            Landing();
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && isOnPlatform) // Right - W + D
         {
             playerJump = new Vector2(0.2f, 1);
             this.transform.parent = null;
             animator.SetBool("Jumping", true);
+            Landing();
         }
 
         // In air controls - Not on a platform
@@ -99,10 +102,8 @@ public class player_movement : MonoBehaviour
 
 
         if (!isOnPlatform)
-        {
             playerJumpCharge = 0.3f; 
-            
-        }
+
         playerJump = Vector2.zero;
 
         // If they player is at the bottom of the screen, moves them up to a higher position on the same X
@@ -112,7 +113,7 @@ public class player_movement : MonoBehaviour
         }
 
         //Animation falling tester
-        if (rigidBody.velocity.y < 0)
+        if (rigidBody.velocity.y < -0.5f)
         {
             animator.SetBool("Jumping", false);
             animator.SetBool("Falling", true);
@@ -128,7 +129,8 @@ public class player_movement : MonoBehaviour
             //rigidBody.drag = 5.0f;
             this.transform.SetParent(collision.transform);
             animator.SetBool("Falling", false);
-            Landing();
+            if (isOnPlatform)
+                Landing();
         }
         if (collision.gameObject.tag == "BottomWall")
         {
