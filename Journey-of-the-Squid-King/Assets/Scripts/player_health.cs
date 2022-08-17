@@ -44,6 +44,8 @@ public class player_health : MonoBehaviour
             invulTimer = baseInvulTimer;
             //GetComponent<SpriteRenderer>().color = Color.green;
             --playerHP;
+            //Removing health icons
+            HealthMonitor.HealthValue -= 1;
 
             healthText.text = playerHP.ToString();
             //shake camera at duration of .15 and magnitude of .4
@@ -55,6 +57,8 @@ public class player_health : MonoBehaviour
             invulTimer = baseInvulTimer;
             //GetComponent<SpriteRenderer>().color = Color.green;
             --playerHP;
+            //Removing health icons
+            HealthMonitor.HealthValue -= 1;
 
             healthText.text = playerHP.ToString();
             StartCoroutine(cameraShake.Shake(.15f, .2f));

@@ -10,6 +10,7 @@ public class enemy_movement : MonoBehaviour
     //This will be the enemy's speed. Adjust as necessary.
     public float enemySpeed = 6.0f;
     private int health = 3;
+
     void Start()
     {
         //When spawned, enemies will find the gameobject called wayPoint.
@@ -29,6 +30,12 @@ public class enemy_movement : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             health -= 1;
+            //Darkening as health is lost
+            if (health == 2)
+            { GetComponent<SpriteRenderer>().color = new Color(0.66f, 0f, 0f); }
+            else if (health == 1)
+            { GetComponent<SpriteRenderer>().color = new Color(0.33f, 0f, 0f); }
+
             // If HP hits 0, add 1 to score and destroy this enemy
             if (health == 0)
             {

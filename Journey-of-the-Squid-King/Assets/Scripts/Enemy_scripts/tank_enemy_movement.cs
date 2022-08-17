@@ -9,7 +9,7 @@ public class tank_enemy_movement : MonoBehaviour
     private Vector3 wayPointPos;
     //This will be the enemy's speed. Adjust as necessary.
     public float enemySpeed = 1.0f;
-    private int health = 12;
+    private int health = 10;
     void Start()
     {
         //When spawned, enemies will find the gameobject called wayPoint.
@@ -29,6 +29,12 @@ public class tank_enemy_movement : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             health -= 1;
+            //Darkening as health is lost
+            if (health == 7)
+            { GetComponent<SpriteRenderer>().color = new Color(0.66f, 0.35f, 0f); }
+            else if (health == 3)
+            { GetComponent<SpriteRenderer>().color = new Color(0.33f, 0.15f, 0f); }
+
             // If HP hits 0, add 1 to score and destroy this enemy
             if (health == 0)
             {
