@@ -9,7 +9,7 @@ public class player_shooting : MonoBehaviour
 
     public Vector3 vectorToCrosshair = new Vector3();
 
-    float fireRate = 0.5f;
+    float fireRate = 0.47f; // was previously 0.5f
     float shootTimer = 0;
 
     // Update is called once per frame

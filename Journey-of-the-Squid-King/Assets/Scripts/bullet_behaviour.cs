@@ -6,7 +6,7 @@ public class bullet_behaviour : MonoBehaviour
 {
     Vector3 travelDirection;
 
-    float bulletSpeed = 0.03f;
+    float bulletSpeed = 0.035f; // was previously 0.03f
 
     float bulletLifetime = 2.0f;
 
