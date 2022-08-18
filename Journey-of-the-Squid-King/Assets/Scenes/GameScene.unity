@@ -1996,6 +1996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Land
       objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093242, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
       propertyPath: lengthInSec
       value: 0.2
@@ -2081,6 +2085,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.b
+      value: 0.20859957
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.b
+      value: 0.21171236
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213648886332093244, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
       propertyPath: ForceModule.y.maxCurve.m_Curve.Array.data[1].time
       value: 1
       objectReference: {fileID: 0}
@@ -2110,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5213648886332093247, guid: 63e7e353207ca6249a5b9459d419ee71, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3369,7 +3397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1079410832
 SpriteRenderer:
   m_ObjectHideFlags: 0
