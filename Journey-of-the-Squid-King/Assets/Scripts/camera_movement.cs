@@ -30,7 +30,7 @@ public class camera_movement : MonoBehaviour
         }
         else if (cameraMoveCD < 0 && !cameraReset)
         {
-            transform.position = new Vector3(0, 0, 10);
+            transform.position = new Vector3(0, 0, -10);
             mainCamera.orthographicSize = 10;
 
             cameraReset = true;
