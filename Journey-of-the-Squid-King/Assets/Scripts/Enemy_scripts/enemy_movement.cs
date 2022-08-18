@@ -42,7 +42,6 @@ public class enemy_movement : MonoBehaviour
                 FindObjectOfType<score_manager>().currentScore += 1;
                 GameObject plusOne = GameObject.FindGameObjectWithTag("Point");
                 Animator anim = plusOne.GetComponent<Animator>();
-                anim.
                 anim.Play("+1 Animation");
                 Destroy(this.gameObject);
             }
