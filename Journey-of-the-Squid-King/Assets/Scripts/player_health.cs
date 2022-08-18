@@ -14,7 +14,10 @@ public class player_health : MonoBehaviour
     public Text healthText;
 
     public Animator animator;
-    public camera_shake cameraShake;
+    public GameObject sceneSpriteMask;
+    public GameObject hitEdgeEffect;
+    public GameObject cameraParent;
+    //public camera_shake cameraShake;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,9 @@ public class player_health : MonoBehaviour
             animator.SetBool("isPlayerDead", true);
             GetComponent<player_movement>().enabled = false;
             GetComponent<player_shooting>().enabled = false;
+
+            sceneSpriteMask.GetComponent<scene_transition_SM>().playerAlive = false;
+            cameraParent.GetComponent<camera_movement>().playerAlive = false;
         }
     }
 
@@ -48,9 +54,13 @@ public class player_health : MonoBehaviour
             HealthMonitor.HealthValue -= 1;
 
             healthText.text = playerHP.ToString();
+
+            Instantiate(hitEdgeEffect, transform.position, transform.rotation);
+
             //shake camera at duration of .15 and magnitude of .4
             //make sure to start the couroutine
-            StartCoroutine(cameraShake.Shake(.15f, .2f));
+            //StartCoroutine(cameraShake.Shake(.15f, .2f));
+            StartCoroutine(cameraParent.GetComponent<camera_shake>().Shake(0.15f, 0.2f));
         }
         if (collision.gameObject.tag == "BottomWall" && invulTimer < 0)
         {
@@ -61,7 +71,11 @@ public class player_health : MonoBehaviour
             HealthMonitor.HealthValue -= 1;
 
             healthText.text = playerHP.ToString();
-            StartCoroutine(cameraShake.Shake(.15f, .2f));
+
+            Instantiate(hitEdgeEffect, transform.position, transform.rotation);
+
+            //StartCoroutine(cameraShake.Shake(.15f, .2f));
+            StartCoroutine(cameraParent.GetComponent<camera_shake>().Shake(0.15f, 0.2f));
         }
     }
 }

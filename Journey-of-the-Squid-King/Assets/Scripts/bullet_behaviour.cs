@@ -10,17 +10,24 @@ public class bullet_behaviour : MonoBehaviour
 
     float bulletLifetime = 2.0f;
 
+    public ParticleSystem bulletPS;
+
     // Start is called before the first frame update
     void Awake()
     {
         travelDirection = FindObjectOfType<player_shooting>().vectorToCrosshair;
         travelDirection.Normalize();
         travelDirection *= bulletSpeed;
+        transform.position += travelDirection;
+
+        bulletPS.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
+        bulletPS.Play();
+
         transform.position += travelDirection;
         bulletLifetime -= Time.deltaTime;
         if (bulletLifetime < 0) Destroy(this.gameObject);
