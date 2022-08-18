@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Enemy
   - BottomWall
+  - Point
   layers:
   - Default
   - TransparentFX
