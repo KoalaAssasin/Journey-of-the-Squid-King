@@ -6,6 +6,7 @@ public class player_shooting : MonoBehaviour
 {
     public GameObject crosshair;
     public GameObject bullet;
+    GameObject prefab;
 
     public Vector3 vectorToCrosshair = new Vector3();
 
@@ -21,7 +22,9 @@ public class player_shooting : MonoBehaviour
         
         if (shootTimer > fireRate)
         {
-            Instantiate(bullet, transform.position, transform.rotation);
+            prefab = Instantiate(bullet, transform.position, transform.rotation);
+            //to be able to render the trail renderer, set the z to -1 to layer over other elements
+            prefab.transform.position = new Vector3(prefab.transform.position.x, prefab.transform.position.y, -1);
             shootTimer = 0.0f;
         }
     }
