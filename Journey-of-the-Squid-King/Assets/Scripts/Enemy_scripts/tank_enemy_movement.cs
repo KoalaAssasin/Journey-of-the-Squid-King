@@ -10,10 +10,10 @@ public class tank_enemy_movement : MonoBehaviour
     //This will be the enemy's speed. Adjust as necessary.
     public float enemySpeed = 1.0f;
     private int health = 9;
+    float oldPosition;
 
     public ParticleSystem hitPS;
     public ParticleSystem deathPS;
-
     public GameObject screenFlash;
 
     void Start()
@@ -24,9 +24,21 @@ public class tank_enemy_movement : MonoBehaviour
 
     void Update()
     {
+        if(oldPosition < transform.position.x) //Sprite rotator
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        oldPosition = transform.position.x;
+
         wayPointPos = new Vector3(wayPoint.transform.position.x, wayPoint.transform.position.y, wayPoint.transform.position.z);
         //Here the enemies will follow the waypoint.
         transform.position = Vector3.MoveTowards(transform.position, wayPointPos, enemySpeed * Time.deltaTime);
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,9 +49,9 @@ public class tank_enemy_movement : MonoBehaviour
             health -= 1;
             //Darkening as health is lost
             if (health == 6)
-            { GetComponent<SpriteRenderer>().color = new Color(0.66f, 0.35f, 0f); }
+            { GetComponent<SpriteRenderer>().color = new Color(0.66f, 0.66f, 0.66f); }
             else if (health == 3)
-            { GetComponent<SpriteRenderer>().color = new Color(0.33f, 0.15f, 0f); }
+            { GetComponent<SpriteRenderer>().color = new Color(0.33f, 0.33f, 0.33f); }
 
             hitPS.Play();
 

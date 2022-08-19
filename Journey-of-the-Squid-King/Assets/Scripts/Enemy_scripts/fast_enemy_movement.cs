@@ -10,6 +10,7 @@ public class fast_enemy_movement : MonoBehaviour
     //This will be the enemy's speed. Adjust as necessary.
     public float enemySpeed = 11.0f;
     private int health = 1;
+    float oldPosition;
 
     public ParticleSystem deathPS;
 
@@ -23,6 +24,16 @@ public class fast_enemy_movement : MonoBehaviour
 
     void Update()
     {
+        if (oldPosition < transform.position.x) //Sprite rotator
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        oldPosition = transform.position.x;
+
         wayPointPos = new Vector3(wayPoint.transform.position.x, wayPoint.transform.position.y, wayPoint.transform.position.z);
         //Here the enemies will follow the waypoint.
         transform.position = Vector3.MoveTowards(transform.position, wayPointPos, enemySpeed * Time.deltaTime);
