@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 6.6
   deathPS: {fileID: 122997453928585763}
+  screenFlash: {fileID: 1051160327806258172, guid: 8b5ee1e26b0377e449a685e68a92b98f, type: 3}
 --- !u!1 &8694419678297237459
 GameObject:
   m_ObjectHideFlags: 0

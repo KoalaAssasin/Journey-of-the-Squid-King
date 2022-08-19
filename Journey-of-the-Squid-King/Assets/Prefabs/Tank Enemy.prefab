@@ -224,6 +224,7 @@ MonoBehaviour:
   enemySpeed: 1
   hitPS: {fileID: 2955641270135522400}
   deathPS: {fileID: 7865646613276141213}
+  screenFlash: {fileID: 1051160327806258172, guid: 8b5ee1e26b0377e449a685e68a92b98f, type: 3}
 --- !u!1001 &3819302669514318705
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class enemy_movement : MonoBehaviour
 
     public ParticleSystem hitPS;
     public ParticleSystem deathPS;
+    public GameObject screenFlash;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class enemy_movement : MonoBehaviour
             if (health == 0)
             {
                 deathPS.Play();
+                Instantiate(screenFlash, transform.position, transform.rotation);
 
                 FindObjectOfType<score_manager>().currentScore += 1;
                 GameObject plusOne = GameObject.FindGameObjectWithTag("Point");
