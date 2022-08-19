@@ -60,9 +60,8 @@ public class enemy_movement : MonoBehaviour
                 Instantiate(screenFlash, transform.position, transform.rotation);
 
                 FindObjectOfType<score_manager>().currentScore += 1;
-                GameObject plusOne = GameObject.FindGameObjectWithTag("Point");
-                Animator anim = plusOne.GetComponent<Animator>();
-                anim.Play("+1 animation");
+                StartCoroutine(FindObjectOfType<Animation_reel>().PlayClip());
+
                 Destroy(this.gameObject);
             }
         }

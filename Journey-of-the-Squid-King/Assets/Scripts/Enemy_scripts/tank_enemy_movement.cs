@@ -62,6 +62,8 @@ public class tank_enemy_movement : MonoBehaviour
                 Instantiate(screenFlash, transform.position, transform.rotation);
 
                 FindObjectOfType<score_manager>().currentScore += 1;
+                StartCoroutine(FindObjectOfType<Animation_reel>().PlayClip());
+
                 Destroy(this.gameObject);
             }
         }
