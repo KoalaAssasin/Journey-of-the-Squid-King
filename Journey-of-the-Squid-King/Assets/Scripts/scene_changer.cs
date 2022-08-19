@@ -20,5 +20,9 @@ public class scene_changer : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName: "GameScene");
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        }
     }
 }

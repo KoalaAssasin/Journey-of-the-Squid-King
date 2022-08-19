@@ -18,6 +18,7 @@ public class player_health : MonoBehaviour
     public GameObject sceneSpriteMask;
     public GameObject hitEdgeEffect;
     public GameObject cameraParent;
+    public GameObject uiGameOver;
     //public camera_shake cameraShake;
 
     public ParticleSystem deadPS;
@@ -46,6 +47,7 @@ public class player_health : MonoBehaviour
 
             deadPS.Play();
 
+            uiGameOver.SetActive(true);
             sceneSpriteMask.GetComponent<scene_transition_SM>().playerAlive = false;
             cameraParent.GetComponent<camera_movement>().playerAlive = false;
         }
