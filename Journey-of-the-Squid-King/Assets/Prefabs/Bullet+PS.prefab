@@ -344,7 +344,6 @@ MonoBehaviour:
   bulletPS: {fileID: 6352468430168131052, guid: 0c8b58bb3f5e6eb45b1964df12ba7863, type: 3}
   bulletHitEnemy: {fileID: 1457026145442198582, guid: d219b49f9065e8444a974efb3d552d9d, type: 3}
   bulletHitWall: {fileID: 1457026145442198582, guid: ad39540df05fe724fa884009fbe7b8b5, type: 3}
-  wallHit: {fileID: 0}
   enemyHit: {fileID: 0}
 --- !u!1001 &4544773437419583290
 PrefabInstance:
