@@ -47,9 +47,9 @@ public class enemy_movement : MonoBehaviour
             health -= 1;
             //Darkening as health is lost
             if (health == 2)
-            { GetComponent<SpriteRenderer>().color = new Color(0.66f, 0.66f, 0.66f); }
+                GetComponent<SpriteRenderer>().color -= new Color(0.0f, 0.33f, 0.33f, 0.0f);
             else if (health == 1)
-            { GetComponent<SpriteRenderer>().color = new Color(0.33f, 0.33f, 0.33f); }
+                GetComponent<SpriteRenderer>().color -= new Color(0.0f, 0.33f, 0.33f, 0.0f);
 
             hitPS.Play();
 

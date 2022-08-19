@@ -37,6 +37,9 @@ public class fast_enemy_movement : MonoBehaviour
         wayPointPos = new Vector3(wayPoint.transform.position.x, wayPoint.transform.position.y, wayPoint.transform.position.z);
         //Here the enemies will follow the waypoint.
         transform.position = Vector3.MoveTowards(transform.position, wayPointPos, enemySpeed * Time.deltaTime);
+
+        var rotationAngle = Quaternion.LookRotation(wayPoint.transform.position - transform.position); // we get the angle has to be rotated
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime * 90); // we rotate the rotationAngle 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
