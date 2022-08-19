@@ -11,6 +11,10 @@ public class bullet_behaviour : MonoBehaviour
     float bulletLifetime = 2.0f;
 
     public ParticleSystem bulletPS;
+    public GameObject bulletHitEnemy;
+    public GameObject bulletHitWall;
+
+    public AudioSource enemyHit;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,8 +39,14 @@ public class bullet_behaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
+            Instantiate(bulletHitEnemy, this.transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "BottomWall")
+        {
+            Instantiate(bulletHitWall, this.transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }

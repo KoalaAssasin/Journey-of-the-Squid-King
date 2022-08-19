@@ -10,6 +10,9 @@ public class fast_enemy_movement : MonoBehaviour
     //This will be the enemy's speed. Adjust as necessary.
     public float enemySpeed = 11.0f;
     private int health = 1;
+
+    public ParticleSystem deathPS;
+
     void Start()
     {
         //When spawned, enemies will find the gameobject called wayPoint.
@@ -32,6 +35,8 @@ public class fast_enemy_movement : MonoBehaviour
             // If HP hits 0, add 1 to score and destroy this enemy
             if (health == 0)
             {
+                deathPS.Play();
+
                 FindObjectOfType<score_manager>().currentScore += 1;
                 Destroy(this.gameObject);
             }

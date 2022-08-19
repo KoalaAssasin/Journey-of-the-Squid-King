@@ -19,6 +19,10 @@ public class player_movement : MonoBehaviour
     public Animator animator;
     public ParticleSystem particleLand;
 
+    public AudioSource jump;
+    public AudioSource jumpCharged;
+    public AudioSource landing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +51,11 @@ public class player_movement : MonoBehaviour
             this.transform.parent = null;
             animator.SetBool("Jumping", true);
             Landing();
+
+            if (playerJumpCharge > 0.9f)
+                jumpCharged.Play();
+
+            jump.Play();
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && isOnPlatform) // Left - W + A
         {
@@ -54,6 +63,11 @@ public class player_movement : MonoBehaviour
             this.transform.parent = null;
             animator.SetBool("Jumping", true);
             Landing();
+
+            if (playerJumpCharge > 0.9f)
+                jumpCharged.Play();
+
+            jump.Play();
         }
         else if (Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && isOnPlatform) // Right - W + D
         {
@@ -61,6 +75,11 @@ public class player_movement : MonoBehaviour
             this.transform.parent = null;
             animator.SetBool("Jumping", true);
             Landing();
+
+            if (playerJumpCharge > 0.9f)
+                jumpCharged.Play();
+
+            jump.Play();
         }
 
         // In air controls - Not on a platform
@@ -125,12 +144,14 @@ public class player_movement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
+            Landing();
+
             isOnPlatform = true;
             //rigidBody.drag = 5.0f;
             this.transform.SetParent(collision.transform);
             animator.SetBool("Falling", false);
-            if (isOnPlatform)
-                Landing();
+
+            
         }
         if (collision.gameObject.tag == "BottomWall")
         {
@@ -153,5 +174,8 @@ public class player_movement : MonoBehaviour
     public void Landing()
     {
         particleLand.Play();
+
+        if (!isOnPlatform)
+            landing.Play();
     }
 }

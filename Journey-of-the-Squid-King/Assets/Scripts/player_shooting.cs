@@ -13,6 +13,8 @@ public class player_shooting : MonoBehaviour
     float fireRate = 0.47f; // was previously 0.5f
     float shootTimer = 0;
 
+    public AudioSource shot;
+
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +27,9 @@ public class player_shooting : MonoBehaviour
             prefab = Instantiate(bullet, transform.position, transform.rotation);
             //to be able to render the trail renderer, set the z to -1 to layer over other elements
             prefab.transform.position = new Vector3(prefab.transform.position.x, prefab.transform.position.y, -1);
+
+            shot.Play();
+
             shootTimer = 0.0f;
         }
     }

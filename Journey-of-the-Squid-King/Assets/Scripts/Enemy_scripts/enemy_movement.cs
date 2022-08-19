@@ -11,6 +11,9 @@ public class enemy_movement : MonoBehaviour
     public float enemySpeed = 6.0f;
     private int health = 3;
 
+    public ParticleSystem hitPS;
+    public ParticleSystem deathPS;
+
     void Start()
     {
         //When spawned, enemies will find the gameobject called wayPoint.
@@ -36,13 +39,17 @@ public class enemy_movement : MonoBehaviour
             else if (health == 1)
             { GetComponent<SpriteRenderer>().color = new Color(0.33f, 0f, 0f); }
 
+            hitPS.Play();
+
             // If HP hits 0, add 1 to score and destroy this enemy
             if (health == 0)
             {
+                deathPS.Play();
+
                 FindObjectOfType<score_manager>().currentScore += 1;
                 GameObject plusOne = GameObject.FindGameObjectWithTag("Point");
                 Animator anim = plusOne.GetComponent<Animator>();
-                anim.Play("+1 Animation");
+                anim.Play("+1 animation");
                 Destroy(this.gameObject);
             }
         }

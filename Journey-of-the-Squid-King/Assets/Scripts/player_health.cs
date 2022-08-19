@@ -14,10 +14,16 @@ public class player_health : MonoBehaviour
     public Text healthText;
 
     public Animator animator;
+
     public GameObject sceneSpriteMask;
     public GameObject hitEdgeEffect;
     public GameObject cameraParent;
     //public camera_shake cameraShake;
+
+    public ParticleSystem deadPS;
+
+    public AudioSource playerHit;
+    public AudioSource playerDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +44,8 @@ public class player_health : MonoBehaviour
             GetComponent<player_movement>().enabled = false;
             GetComponent<player_shooting>().enabled = false;
 
+            deadPS.Play();
+
             sceneSpriteMask.GetComponent<scene_transition_SM>().playerAlive = false;
             cameraParent.GetComponent<camera_movement>().playerAlive = false;
         }
@@ -57,6 +65,12 @@ public class player_health : MonoBehaviour
 
             Instantiate(hitEdgeEffect, transform.position, transform.rotation);
 
+            if (playerHP > 0)
+                playerHit.Play();
+            else
+                playerDeath.Play();
+
+
             //shake camera at duration of .15 and magnitude of .4
             //make sure to start the couroutine
             //StartCoroutine(cameraShake.Shake(.15f, .2f));
@@ -73,6 +87,11 @@ public class player_health : MonoBehaviour
             healthText.text = playerHP.ToString();
 
             Instantiate(hitEdgeEffect, transform.position, transform.rotation);
+
+            if (playerHP > 0)
+                playerHit.Play();
+            else
+                playerDeath.Play();
 
             //StartCoroutine(cameraShake.Shake(.15f, .2f));
             StartCoroutine(cameraParent.GetComponent<camera_shake>().Shake(0.15f, 0.2f));

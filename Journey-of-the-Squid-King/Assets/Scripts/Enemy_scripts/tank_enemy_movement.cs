@@ -9,7 +9,11 @@ public class tank_enemy_movement : MonoBehaviour
     private Vector3 wayPointPos;
     //This will be the enemy's speed. Adjust as necessary.
     public float enemySpeed = 1.0f;
-    private int health = 10;
+    private int health = 9;
+
+    public ParticleSystem hitPS;
+    public ParticleSystem deathPS;
+
     void Start()
     {
         //When spawned, enemies will find the gameobject called wayPoint.
@@ -30,14 +34,18 @@ public class tank_enemy_movement : MonoBehaviour
         {
             health -= 1;
             //Darkening as health is lost
-            if (health == 7)
+            if (health == 6)
             { GetComponent<SpriteRenderer>().color = new Color(0.66f, 0.35f, 0f); }
             else if (health == 3)
             { GetComponent<SpriteRenderer>().color = new Color(0.33f, 0.15f, 0f); }
 
+            hitPS.Play();
+
             // If HP hits 0, add 1 to score and destroy this enemy
             if (health == 0)
             {
+                deathPS.Play();
+
                 FindObjectOfType<score_manager>().currentScore += 1;
                 Destroy(this.gameObject);
             }
