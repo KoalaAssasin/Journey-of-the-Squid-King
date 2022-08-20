@@ -6,6 +6,8 @@ public class scene_transition_SM : MonoBehaviour
 {
     public bool playerAlive = true;
 
+    public buttons_to_screen buttToScreen;
+
     float playerHasSpawnedCD = 0.5f;
     float playerHasDiedCD = 3.0f;
 
@@ -27,6 +29,7 @@ public class scene_transition_SM : MonoBehaviour
         else if (!playerAlive && playerHasDiedCD < 0 && transform.localScale.x > 0.1f)
         {
             transform.localScale -= new Vector3(Time.deltaTime * 50, Time.deltaTime * 50, 0);
+            buttToScreen.MoveButtonsToZero();
         }
     }
 }
