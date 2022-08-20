@@ -7,11 +7,6 @@ public class Play_Menu_Sounds : MonoBehaviour
     [SerializeField] private List<AudioClip> audioClips = new List<AudioClip>();
     [SerializeField] private GameObject audioClipPrefab;
 
-    private void Awake()
-    {
-        //play background music
-    }
-
     public static IEnumerator PlayClip(ushort clipId, float clipVol)
     {
         Play_Menu_Sounds currentManager = FindObjectOfType<Play_Menu_Sounds>();
@@ -21,16 +16,11 @@ public class Play_Menu_Sounds : MonoBehaviour
         source.Play();
         yield return new WaitWhile(() => source.isPlaying);
 
-        if (clipId == 0)
-        {
-            source.loop = true;
-        }
-        else
-            Destroy(source.gameObject);
+        Destroy(source.gameObject);
     }
 
     public void PressPlay()
     {
-        StartCoroutine(PlayClip(1, 1));
+        StartCoroutine(PlayClip(1, 0.5f));
     }
 }
